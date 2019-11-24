@@ -12,7 +12,7 @@ urlpatterns =[
     url(r"^project/(?P<pk>\d+)/review/delete/$", views.delete_review, name="project_review_delete"),
     url(r"^project/new/$", views.ProjectCreate.as_view(), name="project_create"),
     url(r"^profile/(?P<pk>\d+)$", views.UserDetail.as_view(), name="user_detail"),
-    url(r"^profile/(?P<pk>\d+)/update/$", views.UserProfileUpdate.as_view(), name="profile_update"),
+    url(r"^profile/(?P<pk>\d+)/update/$", views.update_profile, name="profile_update"),
     url(r"^about/$", views.AboutView.as_view(), name="about"),
 ]
 

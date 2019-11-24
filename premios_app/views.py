@@ -7,7 +7,6 @@ from .models import Project, Review, User
 from .forms import ProjectForm, ReviewForm, UpdateProfileForm
 from django.utils import timezone
 from django.urls import reverse_lazy, reverse
-from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -57,7 +56,7 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["current_user"] = self.request.user
-        return contexts
+        return context
 
 
 class ProjectUpdate(LoginRequiredMixin ,UpdateView):
@@ -97,21 +96,23 @@ class UserDetail(LoginRequiredMixin, DetailView):
         return context
 
 
-class UserProfileUpdate(LoginRequiredMixin, UpdateView):
-    login_url = "/accounts/login/"
-    template_name = "premios_app/user_profile_form.html"
-    redirect_field_name = "premios_app/user_detail.html"
-    model = User
-    form_class = UpdateProfileForm
+@login_required
+def update_profile(request, pk):
+    profile = User.objects.get(pk=pk)
+    current_user = request.user
 
-    def get_success_url(self):
-        return reverse("user_detail", kwargs={"pk": self.object.pk})
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["current_user"] = self.request.user
-        return context
-
+    if request.method == "POST":
+        form = UpdateProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            updated_profile = form.save(commit=False)
+            updated_profile.user = current_user
+            updated_profile.save()
+            return redirect("user_detail", pk=profile.pk)
+    else:
+        form = UpdateProfileForm()
+    return render(request, "premios_app/user_profile_form.html", context={"form":form,
+                                                                          "current_user":current_user,
+                                                                          "profile":profile})
 
 @login_required
 def review_project(request, pk):

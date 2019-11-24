@@ -30,6 +30,6 @@ class UpdateProfileForm(forms.ModelForm):
         model = Profile
         fields = ("bio", "profile_pic")
         widgets = {
-            "bio":forms.Textarea(attrs={"class":""}),
-            "profile_pic":forms.FileInput(attrs={"class":""}),
+            "bio":forms.Textarea(attrs={"class":"form-control mb-4", "value":"user.profile.bio"}),
+            "profile_pic":forms.FileInput(attrs={"class":"custom-file"}),
         }
