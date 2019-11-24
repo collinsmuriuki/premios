@@ -1,13 +1,14 @@
 from django import forms
 from .models import Project, Profile, Review
+from tinymce.widgets import TinyMCE
 
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ("title", "description", "project_pic",)
+        fields = ("title", "description", "project_pic", "author")
         widgets = {
             "title":forms.TextInput(attrs={"class":"form-control mb-4"}),
-            "description":forms.Textarea(attrs={"class":"form-control mb-4"}),
+            "description":TinyMCE(attrs={'cols': 116, 'rows': 15}),
             "project_pic":forms.FileInput(attrs={"class":"custom-file"}),
         }
 

@@ -4,6 +4,7 @@ from django.contrib.contenttypes.fields import GenericRelation
 from django.core.urlresolvers import reverse
 from django.core.validators import MaxValueValidator, MinValueValidator
 from star_ratings.models import Rating
+from tinymce.models import HTMLField
 import statistics
 
 # Create your models here.
@@ -26,7 +27,7 @@ class Profile(models.Model):
 class Project(models.Model):
     author = models.ForeignKey(User, related_name="projects")
     title = models.CharField(max_length=144)
-    description = models.TextField()
+    description = HTMLField()
     project_pic = models.ImageField(upload_to="project_pics/")
     publish_date = models.DateTimeField(auto_now_add=True)
 
