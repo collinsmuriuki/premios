@@ -7,6 +7,8 @@ from .models import Project, Review, User
 from .forms import ProjectForm, ReviewForm, UpdateProfileForm
 from django.utils import timezone
 from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
+
 
 # Create your views here.
 

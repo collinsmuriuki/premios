@@ -5,7 +5,7 @@ from tinymce.widgets import TinyMCE
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ("title", "description", "project_pic", "author")
+        fields = ("title", "description", "project_pic",)
         widgets = {
             "title":forms.TextInput(attrs={"class":"form-control mb-4"}),
             "description":TinyMCE(attrs={'cols': 116, 'rows': 15}),
