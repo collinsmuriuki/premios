@@ -22,7 +22,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light">
-                        <i class="fab fa-google-plus-g"></i>
+                        <i class="fab fa-discord"></i>
                     </a>
                 </li>
                 {%if user.is_authenticated%}
@@ -36,12 +36,12 @@
                         <a class="dropdown-item" href="{%url 'user_detail' user.pk%}">Profile</a>
                         <a class="dropdown-item" href="{%url 'post_new'%}">New Post</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{%url 'logout'%}">Logout</a>
+                        <a class="dropdown-item" href="/accounts/logout">Logout</a>
                     </div>
                 </li>
                 {%else%}
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="{%url 'login'%}">
+                    <a class="nav-link waves-effect waves-light" href="/accounts/login">
                         Login
                     </a>
                 </li>
