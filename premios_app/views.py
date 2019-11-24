@@ -15,6 +15,11 @@ from django.http import HttpResponseRedirect
 class AboutView(TemplateView):
     template_name = "premios_app/about.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["current_user"] = self.request.user
+        return context
+
 
 class ProjectList(ListView):
     model = Project
@@ -23,10 +28,20 @@ class ProjectList(ListView):
     def get_queryset(self):
         return Project.objects.filter(publish_date__lte=timezone.now()).order_by("-publish_date")
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["current_user"] = self.request.user
+        return context
+
 
 class ProjectDetail(DetailView):
     model = Project
     context_object_name = "project"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["current_user"] = self.request.user
+        return context
 
 
 class ProjectCreate(LoginRequiredMixin, CreateView):
@@ -39,12 +54,22 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["current_user"] = self.request.user
+        return contexts
+
 
 class ProjectUpdate(LoginRequiredMixin ,UpdateView):
     login_url = "/accounts/login/"
     redirect_field_name = "premios_app/project_detail.html"
     model = Project
     form_class = ProjectForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["current_user"] = self.request.user
+        return context
 
 
 class ProjectDelete(LoginRequiredMixin, DeleteView):
@@ -53,6 +78,11 @@ class ProjectDelete(LoginRequiredMixin, DeleteView):
     model = Project
     success_url = reverse_lazy("project_list")
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["current_user"] = self.request.user
+        return context
+
 
 class UserDetail(LoginRequiredMixin, DetailView): 
     login_url = "/accounts/login/"
@@ -60,6 +90,11 @@ class UserDetail(LoginRequiredMixin, DetailView):
     model = User
     template_name = "premios_app/user_detail.html"
     context_object_name = "user"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["current_user"] = self.request.user
+        return context
 
 
 class UserProfileUpdate(LoginRequiredMixin, UpdateView):
@@ -71,6 +106,11 @@ class UserProfileUpdate(LoginRequiredMixin, UpdateView):
 
     def get_success_url(self):
         return reverse("user_detail", kwargs={"pk": self.object.pk})
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["current_user"] = self.request.user
+        return context
 
 
 @login_required

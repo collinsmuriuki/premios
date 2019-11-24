@@ -18,7 +18,7 @@
     </div>
 
     <a href="{%url 'project_review' project.pk%}" class="btn brown-button text-white w-border">Write a comment</a>
-    {%if user.is_authenticated%}
+    {%if current_user.pk == project.author.pk%}
     <a href="{%url 'project_delete' project.pk%}" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a>
     {%endif%}
     <p>{% ratings project %}</p>
