@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.contenttypes.fields import GenericRelation
 from django.core.urlresolvers import reverse
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.db.models import Q
 from star_ratings.models import Rating
 from tinymce.models import HTMLField
 import statistics
@@ -39,7 +40,7 @@ class Project(models.Model):
 
     @classmethod
     def search_by_title(cls, search_term):
-        return cls.objects.filter(title__icontains = search_term)
+        return cls.objects.filter(Q(title__icontains = search_term)|Q(description__icontains = search_term)|Q(author__username=search_term))
 
     def __str__(self):
         return self.title
