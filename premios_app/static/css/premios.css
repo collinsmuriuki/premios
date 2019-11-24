@@ -1,9 +1,23 @@
+body{
+    font-family: 'Roboto Mono', monospace;
+}
+
 .navbar {
     background-color: #3e2723;
 }
 
+.big-brand{
+    font-family: 'Press Start 2P', cursive;
+}
+
+.auth-info{
+    font-family: 'Press Start 2P', cursive;
+}
+
 .landing-jumbotron {
     background: #ffebee;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
 }
 
 ::selection {
