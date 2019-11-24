@@ -35,6 +35,10 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
     model = Project
     form_class = ProjectForm
 
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 class ProjectUpdate(LoginRequiredMixin ,UpdateView):
     login_url = "/accounts/login/"
@@ -47,7 +51,7 @@ class ProjectDelete(LoginRequiredMixin, DeleteView):
     login_url = "/accounts/login/"
     redirect_field_name = "premios_app/project_detail.html"
     model = Project
-    success_url = reverse_lazy("post_list")
+    success_url = reverse_lazy("project_list")
 
 
 class UserDetail(LoginRequiredMixin, DetailView): 
