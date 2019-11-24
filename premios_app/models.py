@@ -20,7 +20,7 @@ class Profile(models.Model):
         return self.projects.all
 
     def __str__(self):
-        return self.username
+        return self.user.username
 
 
 class Project(models.Model):
