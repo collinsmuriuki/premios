@@ -137,4 +137,16 @@ def delete_review(request, pk):
     review = get_object_or_404(Review, pk=pk)
     project_pk = review.project.pk
     review.delete()
-    return redirect("project_detail", pk=project_pk)         
+    return redirect("project_detail", pk=project_pk)
+
+
+def search_results(request):
+    if request.method == "GET":
+        search_term = request.GET.get("search")
+        projects = Project.search_by_title(search_term)
+        message = "{}".format(search_term)
+
+        return render(request, "premios_app/search.html", context={"message":message,
+                                                                "projects":projects})
+    message = "You haven't searched for any term"
+    return render(request, "premios_app/search.html", context={"message":message})         

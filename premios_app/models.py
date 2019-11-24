@@ -37,6 +37,10 @@ class Project(models.Model):
     def get_absolute_url(self):
         return reverse("project_detail", kwargs={"pk":self.pk})
 
+    @classmethod
+    def search_by_title(cls, search_term):
+        return cls.objects.filter(title__icontains = search_term)
+
     def __str__(self):
         return self.title
 
