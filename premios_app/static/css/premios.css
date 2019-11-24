@@ -162,7 +162,6 @@ a {
 .avatar {
     width: 50px;
     height: 50px;
-    margin-left: -42px;
     border-radius: 50%;
 }
 
@@ -332,7 +331,7 @@ a:hover {
 
 .comment {
     overflow-y: auto;
-    margin-left: 32px;
+    margin-left: 84px;
     margin-right: 16px;
 }
 
@@ -405,7 +404,7 @@ button {
     }
 
     .comments {
-        padding: 32px;
+        padding: 16px;
     }
 }
 

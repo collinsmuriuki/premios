@@ -15,10 +15,10 @@
 
     <div class="project-description">
         {{project.description|safe}}
-        <p>{% ratings project %}</p>
     </div>
 
     <a href="{%url 'project_review' project.pk%}" class="btn brown-button text-white w-border">Write a comment</a>
+    <p>{% ratings project %}</p>
 
     <hr>
     {%for review in project.reviews.all%}
@@ -43,11 +43,13 @@
                         <p>{{review.comment}}</p>
                     </div>
                     <div class="actions">
-                        <!---->
-                        <!---->
-                        <!---->
+                        <p>Average score {{review.get_average_score}} of 10</p>
                     </div>
-                    <div class="v-dialog__container" style="display: block;"></div>
+                    <div class="v-dialog__container" style="display: block;">
+                            <!-- <p>Design score: {{review.design_score}} of 10</p>
+                            <p>Usability score: {{review.usability_score}} of 10</p>
+                            <p>Content score: {{review.content_score}} of 10</p> -->
+                    </div>
                 </div>
             </div>
         </div>
