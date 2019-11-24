@@ -10,7 +10,7 @@ import statistics
 # Create your models here.
 
 class Profile(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
     profile_pic = models.ImageField(upload_to="profile_pics/")
 
@@ -25,7 +25,7 @@ class Profile(models.Model):
 
 
 class Project(models.Model):
-    author = models.ForeignKey(User, related_name="projects")
+    author = models.ForeignKey(User, related_name="projects", on_delete=models.CASCADE)
     title = models.CharField(max_length=144)
     description = HTMLField()
     project_pic = models.ImageField(upload_to="project_pics/")
@@ -42,8 +42,8 @@ class Project(models.Model):
 
 
 class Review(models.Model):
-    project = models.ForeignKey(Project, related_name="reviews")
-    author = models.ForeignKey(User, related_name="reviews")
+    project = models.ForeignKey(Project, related_name="reviews", on_delete=models.CASCADE)
+    author = models.ForeignKey(User, related_name="reviews", on_delete=models.CASCADE)
     comment = models.TextField()
     design_score = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
     usability_score = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
