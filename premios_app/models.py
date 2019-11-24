@@ -27,7 +27,7 @@ class Project(models.Model):
     author = models.ForeignKey(User, related_name="projects")
     title = models.CharField(max_length=144)
     description = models.TextField()
-    project_pic = models.ImageField(upload_to="project_pics")
+    project_pic = models.ImageField(upload_to="project_pics/")
     publish_date = models.DateTimeField(auto_now_add=True)
 
     def save_project(self):
