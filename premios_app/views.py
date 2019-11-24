@@ -50,6 +50,7 @@ class ProjectDelete(LoginRequiredMixin, DeleteView):
 
 class UserDetail(DetailView): 
     model = User
+    template_name = "premios_app/user_detail.html"
     context_object_name = "user"
 
 
