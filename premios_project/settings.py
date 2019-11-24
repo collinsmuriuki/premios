@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'premios_app',
     'star_ratings',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
