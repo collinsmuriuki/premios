@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Project, Review, User
 from .forms import ProjectForm, ReviewForm, UpdateProfileForm
 from django.utils import timezone
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 
 
 # Create your views here.
