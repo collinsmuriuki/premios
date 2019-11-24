@@ -1,9 +1,9 @@
 {%extends "premios_app/base.html"%}
 {%block content%}
 {%include "premios_app/navbar.html"%}
-<div class="jumbotron jumbotron-fluid text-center landing-jumbotron z-depth-0">
-    <h3 class="jumbotron-header">Welcome to Premios</h3>
-    <a href="#" class="btn brown-button text-white btn-rounded mb-4">Button</a>
+<div class="jumbotron text-center landing-jumbotron z-depth-0">
+    <h2 class="jumbotron-header">Welcome to Premios</h2>
+    <a href="#" class="btn brown-button text-white btn-rounded mb-4 w-border">Share Project</a>
 </div>
 <div class="container">
     {%for project in projects%}
@@ -39,7 +39,7 @@
 
     </div>
     {%empty%}
-    <h2 class="text-center">No Projects Posted</h2>
+    <h2 class="text-center no-projects">No Projects Posted</h2>
     {%endfor%}
 </div>
 {%endblock%}
