@@ -6,9 +6,9 @@ class ProjectForm(forms.ModelForm):
         model = Project
         fields = ("title", "description", "project_pic",)
         widgets = {
-            "title":forms.TextInput(attrs={"class":""}),
-            "description":forms.Textarea(attrs={"class":""}),
-            "project_pic":forms.FileInput(attrs={"class":""}),
+            "title":forms.TextInput(attrs={"class":"form-control mb-4"}),
+            "description":forms.Textarea(attrs={"class":"form-control mb-4"}),
+            "project_pic":forms.FileInput(attrs={"class":"custom-file"}),
         }
 
 
