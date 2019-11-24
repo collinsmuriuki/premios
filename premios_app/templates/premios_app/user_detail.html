@@ -14,7 +14,7 @@
                     height="100">
                 {%endif%}
                 <div class="card-body profile-card p-1">
-                    <h3 class="card-title text-center">{{user.first_name}} {{user.last_name}}</h3>
+                    <h3 class="card-title text-center capitalize">{{user.first_name}} {{user.last_name}}</h3>
                     <h4 class="card-title text-center">{{user.username}}</h4>
                     <hr>
                     {%if user.profile.bio%}
@@ -28,7 +28,7 @@
                     {%if user.is_authenticated%}
 
                     <div class="list-group">
-                        <a class="btn brown-button w-border edit"><i class="far fa-edit"></i> Edit Profile</a>
+                        <a href="{%url 'profile_update' user.pk%}" class="btn brown-button w-border edit text-white"><i class="far fa-edit"></i> Edit Profile</a>
                     </div>
                     {%endif%}
                 </div>

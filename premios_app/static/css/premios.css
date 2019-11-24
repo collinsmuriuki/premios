@@ -2,6 +2,10 @@ body {
     font-family: 'Roboto Mono', monospace;
 }
 
+.capitalize{
+    text-transform: capitalize;
+}
+
 .mid {
     margin-left: auto;
     margin-right: auto;
@@ -419,4 +423,16 @@ button {
 
 .edit {
     float: right;
+}
+
+
+/* TINYMCE */
+table.mceLayout, textarea.tinyMCE {
+    width: 100% !important;
+}
+
+@media only screen and (min-width: 600px) {
+    table.mceLayout, textarea.richEditor {
+       width: 600px !important;
+    }
 }

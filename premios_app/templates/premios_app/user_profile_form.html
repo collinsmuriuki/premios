@@ -1,0 +1,14 @@
+{%extends "premios_app/base.html"%}
+{%block content%}
+{%include "premios_app/navbar.html"%}
+
+<div class="container">
+    <h2 class="big-brand" style="margin-top: 20px;">Update your profile</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit" class="btn brown-button text-white">Update</button>
+    </form>
+</div>
+
+{%endblock%}
