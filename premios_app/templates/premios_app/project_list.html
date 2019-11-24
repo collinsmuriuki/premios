@@ -5,42 +5,40 @@
     <a href="#" class="btn brown-button text-white btn-rounded mb-4">Button</a>
 </div>
 <div class="container">
-    <div class="row">
-        {%for project in projects%}
-        <div class="jumbotron z-depth-0 p-4">
-            <div class="row">
-                <div class="col-md-4 offset-md-1 mx-3 my-3">
-                    <div class="view overlay">
-                        <img src="{{project.project_pic.url}}" class="img-fluid"
-                            alt="Sample image for first version of blog listing">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="col-md-7 text-md-left ml-3 mt-3">
-                    <a href="#!" class="brown-text">
-                        <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i> Work</h6>
+    {%for project in projects%}
+    <div class="jumbotron z-depth-0 p-4">
+        <div class="row">
+            <div class="col-md-4 offset-md-1 mx-3 my-3">
+                <div class="view overlay">
+                    <img src="{{project.project_pic.url}}" class="img-fluid"
+                        alt="Sample image for first version of blog listing">
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
                     </a>
-
-                    <h4 class="h4 mb-4">{{project.title}}</h4>
-
-                    <p class="font-weight-normal">{{project.descritption|safe}}</p>
-                    <p class="font-weight-normal">by <a><strong>{{project.author.username}}</strong></a>, {{project.publish_date|date:"D M Y"}}</p>
-
-                    <a class="btn brown-button text-white" href="{%url 'project_detail' post.pk%}">View</a>
-
                 </div>
 
             </div>
 
+            <div class="col-md-7 text-md-left ml-3 mt-3">
+                <a href="#!" class="brown-text">
+                    <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i> Work</h6>
+                </a>
+
+                <h4 class="h4 mb-4">{{project.title}}</h4>
+
+                <p class="font-weight-normal">{{project.descritption|safe}}</p>
+                <p class="font-weight-normal">by <a><strong>{{project.author.username}}</strong></a>,
+                    {{project.publish_date|date:"D M Y"}}</p>
+
+                <a class="btn brown-button text-white" href="{%url 'project_detail' post.pk%}">View</a>
+
+            </div>
+
         </div>
-        {%empty%}
-        <h1 class="text-center">No Projects Posted</h1>
-        {%endfor%}
 
     </div>
+    {%empty%}
+    <h2 class="text-center">No Projects Posted</h2>
+    {%endfor%}
 </div>
 {%endblock%}
