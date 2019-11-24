@@ -1,3 +1,24 @@
 {%extends "premios_app/base.html"%}
 {%block content%}
+{%include "premios_app/navbar.html"%}
+<div class="jumbotron jumbotron-fluid text-center landing-jumbotron z-depth-0">
+    {%if not form.instance.id%}
+    <h3 class="jumbotron-header landing-jumbotron">Share your work</h3>
+    <p class="brown-color">You're only one step away...<p>
+            {%else%}
+            <h3 class="jumbotron-header landing-jumbotron">Update your work</h3>
+            <p class="brown-color">Fix a typo, or spice things up...<p>
+                    {%endif%}
+</div>
+
+<div class="container-fluid mid">
+    <h2 class="no-projects">Please fill the form</h2>
+    <form method="POST" class="form-group project-form" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <div class="text-center">
+            <button class="btn brown-button text-white w-border" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
 {%endblock%}

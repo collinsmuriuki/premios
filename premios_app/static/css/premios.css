@@ -2,6 +2,12 @@ body{
     font-family: 'Roboto Mono', monospace;
 }
 
+.mid{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
 .reg-text{
     font-family: 'Roboto Mono', monospace;
 }
@@ -38,6 +44,10 @@ body{
 
     .no-projects{
         display: none;
+    }
+
+    .project-form{
+        width: 80%;
     }
 }
 
