@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'premios_app',
     'star_ratings',
     'bootstrap4',
+    'tinymce',
 ]
 
 MIDDLEWARE = [

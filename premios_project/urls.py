@@ -20,6 +20,7 @@ from django.contrib.auth import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
+    url(r'^tinymce/', include('tinymce.urls')),
     url(r'', include('premios_app.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^logout/$', views.logout, name='logout', kwargs={'next_page':'/'}),
