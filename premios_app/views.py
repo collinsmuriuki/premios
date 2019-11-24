@@ -27,17 +27,23 @@ class ProjectDetail(DetailView):
     context_object_name = "project"
 
 
-class ProjectCreate(CreateView): # add loginrequiredmixin
+class ProjectCreate(LoginRequiredMixin, CreateView):
+    login_url = "/accounts/login/"
+    redirect_field_name = "premios_app/project_detail.html"
     model = Project
     form_class = ProjectForm
 
 
-class ProjectUpdate(UpdateView):  # add loginrequiredmixin
+class ProjectUpdate(LoginRequiredMixin ,UpdateView):
+    login_url = "/accounts/login/"
+    redirect_field_name = "premios_app/project_detail.html"
     model = Project
     form_class = ProjectForm
 
 
-class ProjectDelete(DeleteView):   # add loginrequiredmixin
+class ProjectDelete(LoginRequiredMixin, DeleteView):
+    login_url = "/accounts/login/"
+    redirect_field_name = "premios_app/project_detail.html"
     model = Project
     success_url = reverse_lazy("post_list")
 
@@ -47,12 +53,14 @@ class UserDetail(DetailView):
     context_object_name = "user"
 
 
-class UserProfileUpdate(UpdateView):   # add loginrequiredmixin
+class UserProfileUpdate(LoginRequiredMixin, UpdateView):
+    login_url = "/accounts/login/"
+    redirect_field_name = "premios_app/project_detail.html"
     model = User
     form_class = UpdateProfileForm
 
 
-# @login_required
+@login_required
 def review_project(request, pk):
     project = get_object_or_404(Project, pk=pk)
     current_user = request.user
@@ -70,7 +78,7 @@ def review_project(request, pk):
     return render(request, "premios_app/review_form.html", context={"form":form,
                                                                     "project":project})
 
-# @login_required
+@login_required
 def delete_review(request, pk):
     review = get_object_or_404(Review, pk=pk)
     project_pk = review.project.pk

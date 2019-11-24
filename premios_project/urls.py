@@ -22,5 +22,5 @@ urlpatterns = [
     url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
     url(r'', include('premios_app.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
-    url(r'^accounts/logout/$', views.logout, kwargs={'next_page':'/'}),
+    url(r'^logout/$', views.logout, name='logout', kwargs={'next_page':'/'}),
 ]
