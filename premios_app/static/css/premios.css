@@ -2,6 +2,10 @@ body{
     font-family: 'Roboto Mono', monospace;
 }
 
+.reg-text{
+    font-family: 'Roboto Mono', monospace;
+}
+
 .navbar {
     background-color: #3e2723;
 }

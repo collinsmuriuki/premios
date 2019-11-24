@@ -3,7 +3,8 @@
 {%include "premios_app/navbar.html"%}
 <div class="jumbotron text-center landing-jumbotron z-depth-0">
     <h2 class="jumbotron-header">Welcome to Premios</h2>
-    <a href="#" class="btn brown-button text-white btn-rounded mb-4 w-border">Share Project</a>
+    <p class="reg-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <a href="{%url 'project_create'%}" class="btn brown-button text-white btn-rounded mb-4 w-border">Share Project</a>
 </div>
 <div class="container">
     {%for project in projects%}
