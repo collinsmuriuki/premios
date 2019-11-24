@@ -10,7 +10,7 @@
     {%for project in projects%}
     <div class="jumbotron z-depth-0 p-4">
         <div class="row">
-            <div class="col-md-4 offset-md-1 mx-3 my-3">
+            <div class="col-md-5 offset-md-1 mx-3 my-3">
                 <div class="view overlay">
                     <img src="{{project.project_pic.url}}" class="img-fluid"
                         alt="Sample image for first version of blog listing">
@@ -21,7 +21,7 @@
 
             </div>
 
-            <div class="col-md-7 text-md-left ml-3 mt-3">
+            <div class="col-md-5 text-md-left ml-3 mt-3">
                 <a href="#!" class="brown-text">
                     <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i> Work</h6>
                 </a>
@@ -32,7 +32,7 @@
                 <p class="font-weight-normal">by <a><strong>{{project.author.username}}</strong></a>,
                     {{project.publish_date|date:"D M Y"}}</p>
 
-                <a class="btn brown-button text-white" href="{%url 'project_detail' post.pk%}">View</a>
+                <a class="btn brown-button text-white" href="{%url 'project_detail' project.pk%}">View</a>
 
             </div>
 

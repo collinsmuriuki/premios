@@ -1,14 +1,21 @@
-body{
+body {
     font-family: 'Roboto Mono', monospace;
 }
 
-.mid{
+.mid {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
 }
 
-.reg-text{
+.project-pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.reg-text {
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -16,11 +23,11 @@ body{
     background-color: #3e2723;
 }
 
-.big-brand{
+.big-brand {
     font-family: 'Press Start 2P', cursive;
 }
 
-.auth-info{
+.auth-info {
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -29,7 +36,7 @@ body{
     font-family: 'Press Start 2P', cursive;
 }
 
-.w-border{
+.w-border {
     border: solid 4px #ffcdd2;
 }
 
@@ -38,15 +45,15 @@ body{
         font-size: 24px;
     }
 
-    .big-brand{
+    .big-brand {
         font-size: 14px;
     }
 
-    .no-projects{
+    .no-projects {
         display: none;
     }
 
-    .project-form{
+    .project-form {
         width: 80%;
     }
 }
@@ -64,9 +71,8 @@ body{
     color: #3e2723;
 }
 
-.write-review{
-    position: absolute;
-    right: 0px;
+.write-review {
+    float: right;
 }
 
 /* COMMENT SECTION */
@@ -404,7 +410,7 @@ button {
 }
 
 /* USER PROFILE */
-.prof-pic{
+.prof-pic {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -412,6 +418,6 @@ button {
     margin-left: auto;
 }
 
-.edit{
+.edit {
     float: right;
 }
