@@ -1,3 +1,54 @@
 {%extends "premios_app/base.html"%}
 {%block content%}
+<div class="jumbotron jumbotron-fluid text-center landing-jumbotron z-depth-0">
+    <h1 class="jumbotron-header">{{project.title}}</h1>
+    <p class="brown-color">{{project.author.username}}</p>
+    <small class="brown-color text-muted">{{project.publish_date}}</small>
+</div>
+<div class="container">
+    <figure>
+        <img src="{{project.project_pic.url}}" class="img-fluid" alt="Sample image for first version of blog listing">
+        <figcaption class="text-muted">{{project.title}}</figcaption>
+    </figure>
+
+    <div class="project-description">
+        {{project.description|safe}}
+    </div>
+
+    <p>Project by: {{project.author.username}}</p>
+
+    <hr>
+    {%if project.reviews%}
+    {%for review in project.reviews.all%}
+    <div class="comment-container theme--light">
+        <div class="comments">
+            <div>
+                <div class="card v-card v-sheet theme--light elevation-2">
+                    <div class="header">
+                        <div class="v-avatar avatar" style="height: 50px; width: 50px;"><img
+                                src="{{review.author.profile.profile_pic.url}}">
+                        </div>
+                        <span class="displayName title">{{review.author.username}}</span> <span class="displayName caption">2 days
+                            ago</span>
+                    </div>
+                    <!---->
+                    <div class="wrapper comment">
+                        <p>{{review.comment}}</p>
+                    </div>
+                    <div class="actions">
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="v-dialog__container" style="display: block;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+    {%else%}
+    <h2 class="text-center">No comments</h2>
+    {%endif%}
+    <a href="{%url 'project_review' project.id%}" class="btn brown-button write-review">Write a review</a>
+</div>
 {%endblock%}
