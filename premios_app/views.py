@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Project, Review, User
 from .forms import ProjectForm, ReviewForm, UpdateProfileForm
 from django.utils import timezone
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 
 
@@ -50,7 +50,9 @@ class ProjectDelete(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy("post_list")
 
 
-class UserDetail(DetailView): 
+class UserDetail(LoginRequiredMixin, DetailView): 
+    login_url = "/accounts/login/"
+    redirect_field_name = "premios_app/user_detail.html"
     model = User
     template_name = "premios_app/user_detail.html"
     context_object_name = "user"
@@ -58,9 +60,13 @@ class UserDetail(DetailView):
 
 class UserProfileUpdate(LoginRequiredMixin, UpdateView):
     login_url = "/accounts/login/"
-    redirect_field_name = "premios_app/project_detail.html"
+    template_name = "premios_app/user_profile_form.html"
+    redirect_field_name = "premios_app/user_detail.html"
     model = User
     form_class = UpdateProfileForm
+
+    def get_success_url(self):
+        return reverse("user_detail", kwargs={"pk": self.object.pk})
 
 
 @login_required
