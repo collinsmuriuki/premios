@@ -1,4 +1,16 @@
 {%extends "premios_app/base.html"%}
 {%block content%}
 {%include "premios_app/navbar.html"%}
+<div class="jumbotron text-center landing-jumbotron z-depth-0">
+    <h2 class="jumbotron-header">Warning page</h2>
+</div>
+
+<div class="container">
+    <form method="POST">
+        {%csrf_token%}
+        <p>Are you sure you want to delete {{object}}?</p>
+        <input type="submit" class="btn btn-outline-danger" value="Delete">
+        <a href="{%url 'post_detail' object.pk%}" class="btn btn-light w-border">Go Back</a>
+    </form>
+</div>
 {%endblock%}
