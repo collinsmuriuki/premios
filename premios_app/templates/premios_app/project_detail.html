@@ -1,4 +1,5 @@
 {%extends "premios_app/base.html"%}
+{%load ratings%}
 {%block content%}
 {%include "premios_app/navbar.html"%}
 <div class="text-center z-depth-0">
@@ -14,6 +15,7 @@
 
     <div class="project-description">
         {{project.description|safe}}
+        <p>{% ratings project %}</p>
     </div>
 
     <a href="{%url 'project_review' project.pk%}" class="btn brown-button text-white w-border">Write a comment</a>

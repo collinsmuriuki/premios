@@ -1,4 +1,5 @@
 {%extends "premios_app/base.html"%}
+{%load ratings%}
 {%block content%}
 {%include "premios_app/navbar.html"%}
 <div class="jumbotron text-center landing-jumbotron z-depth-0">
@@ -28,6 +29,7 @@
                 <p class="font-weight-normal">by <a href="{%url 'user_detail' project.author.pk%}"><strong>{{project.author.username}}</strong></a>,
                     {{project.publish_date|date:"D M Y"}}</p>
                 <small class="font-weight-normal">{{project.reviews.count}} review(s)</small>
+                <p>{% ratings project %}</p>
 
                 <a class="btn brown-button text-white w-border" href="{%url 'project_detail' project.pk%}">View</a>
 
