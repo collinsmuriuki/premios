@@ -16,7 +16,7 @@
         {{project.description|safe}}
     </div>
 
-    <a href="{%url 'project_review' project.pk%}" class="btn brown-button text-white">Write a comment</a>
+    <a href="{%url 'project_review' project.pk%}" class="btn brown-button text-white w-border">Write a comment</a>
 
     <hr>
     {%for review in project.reviews.all%}

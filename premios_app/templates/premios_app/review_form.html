@@ -2,14 +2,8 @@
 {%block content%}
 {%include "premios_app/navbar.html"%}
 
-<div class="jumbotron jumbotron-fluid text-center landing-jumbotron z-depth-0">
-    <h3 class="jumbotron-header landing-jumbotron">{{project.title}}</h3>
-    <p class="brown-color">{{project.author.username}}</p>
-    <small class="brown-color text-muted">{{project.publish_date}}</small>
-</div>
-
 <div class="container-fluid mid">
-    <h2 class="no-projects">Leave a review</h2>
+    <h2 class="no-projects" style="margin-top: 20px;">Leave a review</h2>
     <form method="POST" class="review-form">
         {%csrf_token%}
         {{form.as_p}}
