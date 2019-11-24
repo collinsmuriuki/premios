@@ -25,8 +25,13 @@
             <div>
                 <div class="card v-card v-sheet theme--light elevation-2">
                     <div class="header">
+                        {%if review.author.profile.profile_pic%}
                         <div class="v-avatar avatar" style="height: 50px; width: 50px;"><img
                                 src="{{review.author.profile.profile_pic.url}}">
+                        {%else%}
+                        <div class="v-avatar avatar" style="height: 50px; width: 50px;"><img
+                            src="/media/profile_pics/default.png">
+                        {%endif%}
                         </div>
                         <span class="displayName title">{{review.author.username}}</span> <span class="displayName caption">2 days
                             ago</span>
