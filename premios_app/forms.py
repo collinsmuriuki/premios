@@ -18,10 +18,10 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ("comment", "design_score", "usability_score", "content_score",)
         widgets = {
-            "comment":forms.Textarea(attrs={"class":""}),
-            "design_score":forms.NumberInput(attrs={"class":""}),
-            "usability_score":forms.NumberInput(attrs={"class":""}),
-            "content_score":forms.NumberInput(attrs={"class":""}),
+            "comment":forms.Textarea(attrs={"class":"form-control mb-4"}),
+            "design_score":forms.NumberInput(attrs={"class":"form-control mb-4"}),
+            "usability_score":forms.NumberInput(attrs={"class":"form-control mb-4"}),
+            "content_score":forms.NumberInput(attrs={"class":"form-control mb-4"}),
         }
 
 
