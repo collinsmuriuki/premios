@@ -39,7 +39,7 @@ class Project(models.Model):
         return reverse("project_detail", kwargs={"pk":self.pk})
 
     @classmethod
-    def search_by_title(cls, search_term):
+    def search_projects(cls, search_term):
         return cls.objects.filter(Q(title__icontains = search_term)|Q(description__icontains = search_term)|Q(author__username=search_term))
 
     def __str__(self):

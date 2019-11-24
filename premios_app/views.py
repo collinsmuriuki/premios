@@ -143,7 +143,7 @@ def delete_review(request, pk):
 def search_results(request):
     if request.method == "GET":
         search_term = request.GET.get("search")
-        projects = Project.search_by_title(search_term)
+        projects = Project.search_projects(search_term)
         message = "{}".format(search_term)
 
         return render(request, "premios_app/search.html", context={"message":message,
