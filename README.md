@@ -1,4 +1,6 @@
-<h1 align="center">Welcome to premios 👋</h1>
+<a href="https://premi0s.herokuapp.com/" target="_blank">
+  <h1 align="center">Welcome to premios 👋</h1>
+</a>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-beta 1.0-blue.svg?cacheSeconds=2592000" />
   <a href="LICENSE" target="_blank">
@@ -68,6 +70,18 @@ You need to create a .env file and set your secret key inside it. To launch the 
 
 ```sh
 python manage.py test
+```
+
+## API
+Users endpoint
+
+```sh
+https://premi0s.herokuapp.com/api/users/
+```
+Projects endpoint
+
+```sh
+https://premi0s.herokuapp.com/api/projects/
 ```
 
 ## Author
