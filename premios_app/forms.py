@@ -5,11 +5,12 @@ from tinymce.widgets import TinyMCE
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ("title", "description", "project_pic",)
+        fields = ("title", "description", "project_pic", "live_site",)
         widgets = {
             "title":forms.TextInput(attrs={"class":"form-control mb-4"}),
             "description":TinyMCE(attrs={'cols': 116, 'rows': 15}),
             "project_pic":forms.FileInput(attrs={"class":"custom-file"}),
+            "live_site":forms.URLInput(attrs={"class":"form-control mb-4"}),
         }
 
 

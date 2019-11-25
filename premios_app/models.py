@@ -31,6 +31,7 @@ class Project(models.Model):
     description = HTMLField()
     project_pic = models.ImageField(upload_to="project_pics/")
     publish_date = models.DateTimeField(auto_now_add=True)
+    live_site = models.CharField(max_length=256) 
 
     def save_project(self):
         self.save()
