@@ -3,10 +3,15 @@ from django.views.generic import (TemplateView, ListView, DetailView,
                                   CreateView, UpdateView, DeleteView)
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from .models import Project, Review, User
+from .models import Project, Review
+from django.contrib.auth.models import User
 from .forms import ProjectForm, ReviewForm, UpdateProfileForm
 from django.utils import timezone
 from django.urls import reverse_lazy
+
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializers import ProjectSerializer, UserSerializer
 
 
 # Create your views here.
@@ -149,4 +154,18 @@ def search_results(request):
         return render(request, "premios_app/search.html", context={"message":message,
                                                                 "projects":projects})
     message = "You haven't searched for any term"
-    return render(request, "premios_app/search.html", context={"message":message})         
+    return render(request, "premios_app/search.html", context={"message":message})
+
+
+class ProjectListView(APIView):
+    def get(self, request):
+        all_projects = Project.objects.all()
+        serializers = ProjectSerializer(all_projects, many=True)
+        return Response(serializers.data) 
+
+
+class UserListView(APIView):
+    def get(self, request):
+        all_users = User.objects.all()
+        serializers = UserSerializer(all_users, many=True)
+        return Response(serializers.data)                 

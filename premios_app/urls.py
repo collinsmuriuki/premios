@@ -15,6 +15,9 @@ urlpatterns =[
     url(r"^profile/(?P<pk>\d+)/update/$", views.update_profile, name="profile_update"),
     url(r"^about/$", views.AboutView.as_view(), name="about"),
     url(r"^search/", views.search_results, name='search_results'),
+
+    url(r'^api/projects/$', views.ProjectListView.as_view()),
+    url(r'^api/users/$', views.UserListView.as_view()),
 ]
 
 if settings.DEBUG:
