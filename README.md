@@ -17,13 +17,47 @@
 
 <img alt="Version" src="screenshot.png" />
 
-## Install
+## Technologies used
 
+1. Python3
+2. SQLite3
+3. MDBootstrap
+4. jQuery
+5. Django
+
+## Requirements
+
+This project requires python3 to run
+Instructions on how to install python can be found <a href="https://realpython.com/installing-python/" target="_blank>here</a>
+
+## Setting up a virtual environement
+
+To create a virtual environement, you will need to install virtualenv
 ```sh
-pip install -r requirements.txt
+pip3 install virtualenv
+```
+
+Create the virtual environement by running the command in the project root
+```sh
+virtualenv venv
+```
+
+Activate the virtual environement by running the command
+```sh
+source venv/bin/activate
+```
+
+You can always deactivate the virtual environement by entering this command
+```sh
+deactivate
 ```
 
 ## Usage
+
+Make migrations by using the command
+```sh
+python manage.py migrate
+```
 
 You need to create a .env file and set your secret key inside it. To launch the app, simply run the command
 ```sh
