@@ -28,7 +28,7 @@
 ## Requirements
 
 This project requires python3 to run
-Instructions on how to install python can be found <a href="https://realpython.com/installing-python/" target="_blank>here</a>
+Instructions on how to install python can be found [here](https://realpython.com/installing-python/)
 
 ## Setting up a virtual environement
 
