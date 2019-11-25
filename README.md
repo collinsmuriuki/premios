@@ -9,7 +9,11 @@
   </a>
 </p>
 
-> An application which allosw a user to post a project he/she has created and get it reviewed by his/her peers
+> An application which allows a user to post a project he/she has created and get it reviewed by his/her peers
+> A project can be rated based on 3 different criteria
+> 1. Design
+> 2. Usability
+> 3. Content
 
 <img alt="Version" src="screenshot.png" />
 
@@ -21,8 +25,9 @@ pip install -r requirements.txt
 
 ## Usage
 
+You need to create a .env file and set your secret key inside it. To launch the app, simply run the command
 ```sh
-You need to create a .env file and set your secret key inside it. To launch the app, simply run the command python manage.py runserver
+ python manage.py runserver
 ```
 
 ## Run tests
