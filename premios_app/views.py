@@ -11,6 +11,7 @@ from django.urls import reverse_lazy
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework import status
 from .serializers import ProjectSerializer, UserSerializer
 
 
@@ -162,6 +163,13 @@ class ProjectListView(APIView):
         all_projects = Project.objects.all()
         serializers = ProjectSerializer(all_projects, many=True)
         return Response(serializers.data) 
+
+    def post(self, request):
+        serializers = ProjectSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class UserListView(APIView):
