@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to premios 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-beta 1.0-blue.svg?cacheSeconds=2592000" />
-  <a href="#" target="_blank">
+  <a href="LICENSE" target="_blank">
     <img alt="License: GNU General Public License v3.0" src="https://img.shields.io/badge/License-GNU General Public License v3.0-yellow.svg" />
   </a>
   <a href="https://twitter.com/collinsmuriuki_" target="_blank">
@@ -10,6 +10,8 @@
 </p>
 
 > An application which allosw a user to post a project he/she has created and get it reviewed by his/her peers
+
+<img alt="Version" src="screenshot.png" />
 
 ## Install
 
