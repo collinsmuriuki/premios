@@ -1,7 +1,6 @@
 from django.test import TestCase
 from .models import Profile, Project, Review
 from django.contrib.auth.models import User
-from django.utils import timezone
 
 # Create your tests here.
 
@@ -11,8 +10,7 @@ class ProfileTest(TestCase):
         self.new_user = User(username="collins", email="collins@gmail.com",
                              password="saf3ty")
         self.new_user.save()
-        self.new_profile = Profile(user=self.new_user, bio="Hello World",
-                                   profile_pic="profile_pics/default.png")
+        self.new_profile = Profile(user=self.new_user, bio="Hello World")
         self.new_profile.save()
 
     def test_instance(self):
@@ -30,8 +28,7 @@ class ProjectTest(TestCase):
         self.new_user = User(username="collins", email="collins@gmail.com",
                              password="saf3ty")
         self.new_user.save()
-        self.new_profile = Profile(user=self.new_user, bio="Hello World",
-                                   profile_pic="profile_pics/default.png")
+        self.new_profile = Profile(user=self.new_user, bio="Hello World")
         self.new_profile.save()
         self.new_project = Project(author=self.new_user, title="Random Title",
                                    description="Random description", live_site="google.com")
@@ -58,8 +55,7 @@ class ReviewTest(TestCase):
         self.new_user = User(username="collins", email="collins@gmail.com",
                              password="saf3ty")
         self.new_user.save()
-        self.new_profile = Profile(user=self.new_user, bio="Hello World",
-                                   profile_pic="profile_pics/default.png")
+        self.new_profile = Profile(user=self.new_user, bio="Hello World")
         self.new_profile.save()
         self.new_project = Project(author=self.new_user, title="Random Title",
                                    description="Random description", live_site="google.com")
