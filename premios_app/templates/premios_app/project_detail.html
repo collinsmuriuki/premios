@@ -9,7 +9,7 @@
 </div>
 <div class="container-fluid mid">
     <figure class="project-pic">
-        <img src="{{project.project_pic.url}}" class="img-fluid" alt="Sample image for first version of blog listing">
+        <img src="{{project.project_pic.cdn_url}}" class="img-fluid" alt="Sample image for first version of blog listing">
         <figcaption class="text-muted">{{project.title}}</figcaption>
     </figure>
 
@@ -34,7 +34,7 @@
                     <div class="header">
                         {%if review.author.profile.profile_pic%}
                         <div class="v-avatar avatar" style="height: 50px; width: 50px;"><img
-                                src="{{review.author.profile.profile_pic.url}}">
+                                src="{{review.author.profile.profile_pic.cdn_url}}">
                         {%else%}
                         <div class="v-avatar avatar" style="height: 50px; width: 50px;"><img
                             src="/media/profile_pics/default.png">

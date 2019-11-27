@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'tinymce',
     'rest_framework',
+    'pyuploadcare.dj',
 ]
 
 REST_FRAMEWORK = {
@@ -81,6 +82,13 @@ TEMPLATES = [
         },
     },
 ]
+
+
+UPLOADCARE = {
+    'pub_key': config('PUBLIC_KEY'),
+    'secret': config('SECRET'),
+}
+
 
 WSGI_APPLICATION = 'premios_project.wsgi.application'
 

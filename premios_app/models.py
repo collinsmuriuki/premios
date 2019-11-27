@@ -6,14 +6,15 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db.models import Q
 from star_ratings.models import Rating
 from tinymce.models import HTMLField
+from pyuploadcare.dj.models import ImageField
 import statistics
 
 # Create your models here.
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     bio = models.TextField(blank=True)
-    profile_pic = models.ImageField(upload_to="profile_pics/")
+    profile_pic = ImageField(blank=True, manual_crop="")
 
     def save_profile(self):
         self.save()
@@ -29,9 +30,9 @@ class Project(models.Model):
     author = models.ForeignKey(User, related_name="projects", on_delete=models.CASCADE)
     title = models.CharField(max_length=144)
     description = HTMLField()
-    project_pic = models.ImageField(upload_to="project_pics/")
+    project_pic = ImageField(manual_crop="")
     publish_date = models.DateTimeField(auto_now_add=True)
-    live_site = models.CharField(max_length=256) 
+    live_site = models.URLField(max_length=256) 
 
     def save_project(self):
         self.save()
