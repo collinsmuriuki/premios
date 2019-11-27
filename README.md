@@ -23,9 +23,9 @@
 
 1. Python3
 2. SQLite3
-3. MDBootstrap
-4. jQuery
-5. Django
+3. MDBootstrap 4.8.10
+4. jQuery 3.4.1
+5. Django 1.11.23
 
 ## Requirements
 
