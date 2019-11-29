@@ -23,7 +23,9 @@
             </div>
 
             <div class="col-md-5 text-md-left ml-3 mt-3">
-                <h4 class="h4 mb-4">{{project.title}}</h4>
+                <a href="{%url 'project_detail' project.pk%}">
+                    <h4 class="h4 mb-4">{{project.title}}</h4>
+                </a>
 
                 <p class="font-weight-normal">{{project.descritption|safe}}</p>
                 <p class="font-weight-normal">by <a href="{%url 'user_detail' project.author.pk%}"><strong>{{project.author.username}}</strong></a>,
