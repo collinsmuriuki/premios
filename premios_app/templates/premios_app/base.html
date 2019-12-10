@@ -36,6 +36,17 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
     <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+    <script src="{% static 'js/three.min.js'%}"></script>
+    <script src="{% static 'js/vanta.globe.min.js'%}"></script>
+    <script>
+        VANTA.GLOBE({
+            el: "#jumbo",
+            color: 0x3e2723,
+            color2: 0x910000,
+            size: 1.80,
+            backgroundColor: 0xffebee
+        })
+    </script>
 </body>
 
 </html>
