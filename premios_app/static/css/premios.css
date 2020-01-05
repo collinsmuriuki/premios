@@ -58,7 +58,7 @@ body {
     border: solid 4px #ffcdd2;
 }
 
-.page-footer{
+/* .page-footer{
     background-color: #3e2723;
     color: #ffcdd2;
     position: absolute;
@@ -66,7 +66,7 @@ body {
     width: 100%;
     clear: both;
     margin-top: 40px;
-}
+} */
 
 @media screen and (max-width: 640px) {
     .jumbotron-header {
