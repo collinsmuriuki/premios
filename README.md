@@ -26,6 +26,8 @@
 3. MDBootstrap 4.8.10
 4. jQuery 3.4.1
 5. Django 1.11.23
+6. three.js JavaScript Graphics
+7. [vanta.js](https://github.com/tengbao/vanta)
 
 ## Requirements
 
