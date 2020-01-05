@@ -61,7 +61,7 @@ body {
 .page-footer{
     background-color: #3e2723;
     color: #ffcdd2;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
     clear: both;
