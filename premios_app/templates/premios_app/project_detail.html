@@ -2,7 +2,7 @@
 {%load ratings%}
 {%block content%}
 {%include "premios_app/navbar.html"%}
-<div class="text-center z-depth-0">
+<div class="text-center project-title z-depth-0" style="margin-top: 70px;">
     <h3 class="jumbotron-header big-brand" style="margin-top: 20px;">{{project.title}}</h3>
     <p class="brown-color">by: <a href="{%url 'user_detail' project.author.pk%}">{{project.author.username}}</a></p>
     <small class="brown-color text-muted">{{project.publish_date|date:"D M Y"}}</small>

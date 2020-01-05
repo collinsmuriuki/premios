@@ -1,5 +1,10 @@
+:root{
+    --primary-font: 'Source Sans Pro', sans-serif;
+    --secondary-font: 'Righteous', cursive;
+}
+
 body {
-    font-family: 'Roboto Mono', monospace;
+    font-family: var(--primary-font);
 }
 
 .capitalize{
@@ -20,7 +25,7 @@ body {
 }
 
 .reg-text {
-    font-family: 'Roboto Mono', monospace;
+    font-family: var(--primary-font);
 }
 
 .navbar {
@@ -28,20 +33,38 @@ body {
 }
 
 .big-brand {
-    font-family: 'Press Start 2P', cursive;
+    font-family: var(--secondary-font);
 }
 
 .auth-info {
-    font-family: 'Press Start 2P', cursive;
+    font-family: var(--secondary-font);
+}
+
+.about{
+    font-family: var(--secondary-font);
 }
 
 .landing-jumbotron {
     background: #ffebee;
-    font-family: 'Press Start 2P', cursive;
+    font-family: var(--secondary-font);
+}
+
+.jumbotron, .user-detail, .project-title
+, .illustration{
+    margin-top: 50px;
 }
 
 .w-border {
     border: solid 4px #ffcdd2;
+}
+
+.page-footer{
+    background-color: #3e2723;
+    color: #ffcdd2;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    clear: both;
 }
 
 @media screen and (max-width: 640px) {
@@ -431,7 +454,7 @@ table.mceLayout, textarea.tinyMCE {
     width: 100% !important;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
     table.mceLayout, textarea.richEditor {
        width: 50% !important;
     }
