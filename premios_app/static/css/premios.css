@@ -50,8 +50,12 @@ body {
 }
 
 .jumbotron, .user-detail, .project-title
-, .illustration, .results{
+, .illustration{
     margin-top: 50px;
+}
+
+.results{
+    margin-top: 70px;
 }
 
 .w-border {
