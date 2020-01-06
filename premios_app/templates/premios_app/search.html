@@ -2,8 +2,8 @@
 {%load ratings%}
 {%block content%}
 {%include "premios_app/navbar.html"%}
-<div class="container mid">
-    <h2 class="mid results" style="margin-top: 20px;">{{projects.count}} result(s) for {{message}}</h2>
+<div class="container mid results">
+    <h2 class="mid" style="margin-top: 20px;">{{projects.count}} result(s) for {{message}}</h2>
     {%for project in projects%}
     <div class="jumbotron z-depth-0 p-4">
         <div class="row">
