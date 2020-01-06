@@ -50,7 +50,7 @@ body {
 }
 
 .jumbotron, .user-detail, .project-title
-, .illustration{
+, .illustration, .results{
     margin-top: 50px;
 }
 
