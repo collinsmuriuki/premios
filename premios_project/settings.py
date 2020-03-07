@@ -156,7 +156,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 # STAR RATINGS
 # star_ratings config options https://django-star-ratings.readthedocs.io/en/stable/
 
-STAR_RATINGS_RERATE = False
+STAR_RATINGS_RERATE = True
 
 
 # DEPLOYMENT
